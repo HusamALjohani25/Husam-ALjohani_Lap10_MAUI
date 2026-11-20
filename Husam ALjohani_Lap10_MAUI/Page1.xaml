@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Husam_ALjohani_Lap10_MAUI.Page1"
+             Title="Husam Shope">
+
+        <Grid Padding="16"
+          RowDefinitions="Auto,*"
+          RowSpacing="12">
+
+            <!-- شريط فلترة التصنيفات -->
+        <HorizontalStackLayout Grid.Row="0"
+                       Spacing="8"
+                       HorizontalOptions="Start">
+            <Button Text="All"
+            Clicked="FilterCategory_Clicked"
+            BackgroundColor="#2563EB"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="38"
+            Padding="14,0" />
+
+            <Button Text="History"
+            Clicked="FilterCategory_Clicked"
+            BackgroundColor="#334155"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="38"
+            Padding="14,0" />
+
+            <Button Text="Technology"
+            Clicked="FilterCategory_Clicked"
+            BackgroundColor="#334155"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="38"
+            Padding="14,0" />
+
+            <Button Text="Novels"
+            Clicked="FilterCategory_Clicked"
+            BackgroundColor="#334155"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="38"
+            Padding="14,0" />
+        </HorizontalStackLayout>
+        <!-- قائمة الكتب -->
+            <ListView Grid.Row="1"
+                  x:Name="myListView"
+                  HasUnevenRows="True"
+                  SelectionMode="None"
+                  HorizontalOptions="Fill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="0,6"
+                               Padding="14"
+                               CornerRadius="14"
+                               HasShadow="False"
+                               BackgroundColor="#1E2530"
+                               BorderColor="#334155">
+                                <Grid ColumnDefinitions="90,*,Auto"
+                                  ColumnSpacing="14"
+                                  VerticalOptions="Center">
+
+                                    <Image Grid.Column="0"
+                                       Source="{Binding ImageUrl}"
+                                       HeightRequest="115"
+                                       WidthRequest="80"
+                                       Aspect="AspectFill"
+                                       VerticalOptions="Center" />
+
+                                    <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="6"
+                                                     VerticalOptions="Center">
+                                        <Label Text="{Binding Title}"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           TextColor="White" />
+
+                                        <Label Text="{Binding Price, StringFormat='{0} SR'}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#F87171" />
+
+                                        <Label Text="{Binding Category}"
+                                           FontSize="12"
+                                           TextColor="#94A3B8" />
+                                    </VerticalStackLayout>
+
+                                    <Button Grid.Column="2"
+                                        Text="Add"
+                                        Clicked="AddBook_Clicked"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="#2563EB"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        CornerRadius="12"
+                                        HeightRequest="40"
+                                        WidthRequest="70"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage>

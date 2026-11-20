@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Husam_ALjohani_Lap10_MAUI.RegisterPage"
+Title="Register">
+    <VerticalStackLayout Padding="24"
+                         Spacing="14"
+                         VerticalOptions="Center"
+                         MaximumWidthRequest="420">
+        <Label Text="Create Account"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="txtRegUsername"
+               Placeholder="Username" />
+
+        <Entry x:Name="txtRegPassword"
+               Placeholder="Password"
+               IsPassword="True" />
+
+        <Entry x:Name="txtRegConfirmPassword"
+               Placeholder="Confirm Password"
+               IsPassword="True" />
+
+        <Label x:Name="lblRegMessage"
+               FontSize="14"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+        <Button Text="Register"
+                Clicked="BtnRegister_Clicked"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                FontSize="17"
+                FontAttributes="Bold"
+                HeightRequest="48"
+                CornerRadius="14" />
+
+        <Button Text="Back to Login"
+                Clicked="BtnBackToLogin_Clicked"
+                BackgroundColor="#334155"
+                TextColor="White"
+                FontSize="15"
+                HeightRequest="44"
+                CornerRadius="14" />
+    </VerticalStackLayout>
+</ContentPage>

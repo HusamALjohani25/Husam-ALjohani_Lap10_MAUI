@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Husam_ALjohani_Lap10_MAUI.MainPage"
+              Title="Login"
+             BackgroundImageSource="back">
+    
+    <VerticalStackLayout Padding="24"
+                         Spacing="16"
+                         VerticalOptions="Center"
+                         MaximumWidthRequest="420">
+        <Label Text="User Login"
+               FontSize="26"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="txtUsername"
+               Placeholder="Username"
+               TextColor="White"
+               PlaceholderColor="#94A3B8"
+               BackgroundColor="#1E2530" />
+
+        <Entry x:Name="txtPassword"
+               Placeholder="Password"
+               IsPassword="True"
+               TextColor="White"
+               PlaceholderColor="#94A3B8"
+               BackgroundColor="#1E2530" />
+
+        <Label x:Name="lblError"
+               TextColor="#F87171"
+               FontSize="14"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+        <Button Text="Login"
+                Clicked="BtnLogin_Clicked"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                FontSize="17"
+                FontAttributes="Bold"
+                HeightRequest="48"
+                CornerRadius="14" />
+
+        <Button Text="Register New Account"
+                Clicked="BtnGoToRegister_Clicked"
+                BackgroundColor="#334155"
+                TextColor="White"
+                FontSize="15"
+                HeightRequest="44"
+                CornerRadius="14" />
+        
+    </VerticalStackLayout>
+</ContentPage>
+
